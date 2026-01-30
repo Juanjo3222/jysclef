@@ -39,6 +39,8 @@ import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.*;
@@ -175,6 +177,7 @@ public class AltoClef implements ModInitializer {
             getExtraBaritoneSettings().avoidBlockBreak(blockPos -> settings.isPositionExplicitlyProtected(blockPos));
             getExtraBaritoneSettings().avoidBlockPlace(blockPos -> settings.isPositionExplicitlyProtected(blockPos));
             getExtraBaritoneSettings().getForceSaveToolPredicates().add((state, item) -> StorageHelper.shouldSaveStack(this, state.getBlock(), item));
+            registerContentAwareAvoiders();
         });
 
         // Receive + cancel chat
@@ -206,6 +209,40 @@ public class AltoClef implements ModInitializer {
 
         // External mod initialization
         runEnqueuedPostInits();
+    }
+
+    private void registerContentAwareAvoiders() {
+        registerAvoidWalkingThroughBlocks(
+                "minecraft:trial_spawner",
+                "minecraft:ominous_trial_spawner",
+                "minecraft:vault",
+                "minecraft:ominous_vault",
+                "minecraft:creaking_heart"
+        );
+        registerAvoidBreakingBlocks("minecraft:creaking_heart");
+    }
+
+    private void registerAvoidWalkingThroughBlocks(String... ids) {
+        for (String id : ids) {
+            Identifier identifier = Identifier.of(id);
+            if (!Registries.BLOCK.containsId(identifier)) {
+                continue;
+            }
+            var block = Registries.BLOCK.get(identifier);
+            getExtraBaritoneSettings().getForceAvoidWalkThroughPredicates()
+                    .add(pos -> getWorld().getBlockState(pos).isOf(block));
+        }
+    }
+
+    private void registerAvoidBreakingBlocks(String... ids) {
+        for (String id : ids) {
+            Identifier identifier = Identifier.of(id);
+            if (!Registries.BLOCK.containsId(identifier)) {
+                continue;
+            }
+            var block = Registries.BLOCK.get(identifier);
+            getExtraBaritoneSettings().avoidBlockBreak(pos -> getWorld().getBlockState(pos).isOf(block));
+        }
     }
 
     // Client tick

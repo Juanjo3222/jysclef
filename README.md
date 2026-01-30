@@ -28,7 +28,7 @@ Because I rewrote a good portion of the `BeatMinecraftTask` a lot of the config 
 I am currently using the [replay mod preprocessor](https://github.com/ReplayMod/preprocessor) to keep the mod updated across multiple versions at the same time.
 
 ### Versions
-Thanks to that, the mod is currently available on **fabric** for (basically) all versions between `1.21.1` and `1.16.5` (inclusive).
+Thanks to that, the mod is currently available on **fabric** for (basically) all versions between `1.21.11` and `1.16.5` (inclusive).
 
 (If there is a specific version in this range that you would like to use, and it isn't supported you can try creating an issue).
 
@@ -54,7 +54,7 @@ Here is a list of links for download of the latest versions for convenience.
 
 | Version | Fabric download link                                                                                          |
 |---------|---------------------------------------------------------------------------------------------------------------|
-| 1.21.1  | [AltoClef 0.19 download](https://github.com/MiranCZ/altoclef/releases/download/0.19/altoclef-1.21.1-0.19.jar) |
+| 1.21.11 | [AltoClef 0.19 download](https://github.com/MiranCZ/altoclef/releases/download/0.19/altoclef-1.21.11-0.19.jar) |
 | 1.21    | [AltoClef 0.19 download](https://github.com/MiranCZ/altoclef/releases/download/0.19/altoclef-1.21-0.19.jar)   |
 | 1.20.6  | [AltoClef 0.19 download](https://github.com/MiranCZ/altoclef/releases/download/0.19/altoclef-1.20.6-0.19.jar) |
 | 1.20.5  | [AltoClef 0.19 download](https://github.com/MiranCZ/altoclef/releases/download/0.19/altoclef-1.20.5-0.19.jar) |

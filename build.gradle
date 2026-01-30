@@ -37,6 +37,7 @@ version = "${project.name}-${project.mod_version}"
 group = project.maven_group
 
 def mappingsVersions = [
+        12111: "1.21.11+build.1",
         11605: "1.16.5+build.10",
         11701: "1.17.1+build.65",
         11800: "1.18+build.1",
@@ -52,6 +53,7 @@ def mappingsVersions = [
 ]
 
 def fabricApiVersions = [
+        12111: "0.110.0+1.21.11",
         11605: "0.42.0+1.16",
         11701: "0.46.1+1.17",
         11800: "0.44.0+1.18",

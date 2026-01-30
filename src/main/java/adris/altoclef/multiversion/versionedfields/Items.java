@@ -141,4 +141,14 @@ public class Items extends net.minecraft.item.Items {
     //$$ public static final Item GLOW_ITEM_FRAME = UNSUPPORTED;
     //#endif
 
+    //#if MC <= 12006
+    //$$ public static final Item BREEZE_ROD = UNSUPPORTED;
+    //$$ public static final Item WIND_CHARGE = UNSUPPORTED;
+    //$$ public static final Item HEAVY_CORE = UNSUPPORTED;
+    //$$ public static final Item MACE = UNSUPPORTED;
+    //$$ public static final Item TRIAL_KEY = UNSUPPORTED;
+    //$$ public static final Item OMINOUS_TRIAL_KEY = UNSUPPORTED;
+    //$$ public static final Item OMINOUS_BOTTLE = UNSUPPORTED;
+    //#endif
+
 }

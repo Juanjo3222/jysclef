@@ -64,4 +64,56 @@ public abstract class Blocks extends net.minecraft.block.Blocks {
     //$$ public static Block DRIPSTONE_BLOCK = UNSUPPORTED;
     //#endif
 
+    //#if MC <= 12006
+    //$$ public static Block TRIAL_SPAWNER = UNSUPPORTED;
+    //$$ public static Block OMINOUS_TRIAL_SPAWNER = UNSUPPORTED;
+    //$$ public static Block VAULT = UNSUPPORTED;
+    //$$ public static Block OMINOUS_VAULT = UNSUPPORTED;
+    //$$ public static Block CHISELED_TUFF = UNSUPPORTED;
+    //$$ public static Block CHISELED_TUFF_BRICKS = UNSUPPORTED;
+    //$$ public static Block TUFF_SLAB = UNSUPPORTED;
+    //$$ public static Block TUFF_STAIRS = UNSUPPORTED;
+    //$$ public static Block TUFF_WALL = UNSUPPORTED;
+    //$$ public static Block TUFF_BRICKS = UNSUPPORTED;
+    //$$ public static Block TUFF_BRICK_SLAB = UNSUPPORTED;
+    //$$ public static Block TUFF_BRICK_STAIRS = UNSUPPORTED;
+    //$$ public static Block TUFF_BRICK_WALL = UNSUPPORTED;
+    //$$ public static Block POLISHED_TUFF = UNSUPPORTED;
+    //$$ public static Block POLISHED_TUFF_SLAB = UNSUPPORTED;
+    //$$ public static Block POLISHED_TUFF_STAIRS = UNSUPPORTED;
+    //$$ public static Block POLISHED_TUFF_WALL = UNSUPPORTED;
+    //$$ public static Block COPPER_BULB = UNSUPPORTED;
+    //$$ public static Block EXPOSED_COPPER_BULB = UNSUPPORTED;
+    //$$ public static Block WEATHERED_COPPER_BULB = UNSUPPORTED;
+    //$$ public static Block OXIDIZED_COPPER_BULB = UNSUPPORTED;
+    //$$ public static Block WAXED_COPPER_BULB = UNSUPPORTED;
+    //$$ public static Block WAXED_EXPOSED_COPPER_BULB = UNSUPPORTED;
+    //$$ public static Block WAXED_WEATHERED_COPPER_BULB = UNSUPPORTED;
+    //$$ public static Block WAXED_OXIDIZED_COPPER_BULB = UNSUPPORTED;
+    //$$ public static Block COPPER_GRATE = UNSUPPORTED;
+    //$$ public static Block EXPOSED_COPPER_GRATE = UNSUPPORTED;
+    //$$ public static Block WEATHERED_COPPER_GRATE = UNSUPPORTED;
+    //$$ public static Block OXIDIZED_COPPER_GRATE = UNSUPPORTED;
+    //$$ public static Block WAXED_COPPER_GRATE = UNSUPPORTED;
+    //$$ public static Block WAXED_EXPOSED_COPPER_GRATE = UNSUPPORTED;
+    //$$ public static Block WAXED_WEATHERED_COPPER_GRATE = UNSUPPORTED;
+    //$$ public static Block WAXED_OXIDIZED_COPPER_GRATE = UNSUPPORTED;
+    //$$ public static Block COPPER_DOOR = UNSUPPORTED;
+    //$$ public static Block EXPOSED_COPPER_DOOR = UNSUPPORTED;
+    //$$ public static Block WEATHERED_COPPER_DOOR = UNSUPPORTED;
+    //$$ public static Block OXIDIZED_COPPER_DOOR = UNSUPPORTED;
+    //$$ public static Block WAXED_COPPER_DOOR = UNSUPPORTED;
+    //$$ public static Block WAXED_EXPOSED_COPPER_DOOR = UNSUPPORTED;
+    //$$ public static Block WAXED_WEATHERED_COPPER_DOOR = UNSUPPORTED;
+    //$$ public static Block WAXED_OXIDIZED_COPPER_DOOR = UNSUPPORTED;
+    //$$ public static Block COPPER_TRAPDOOR = UNSUPPORTED;
+    //$$ public static Block EXPOSED_COPPER_TRAPDOOR = UNSUPPORTED;
+    //$$ public static Block WEATHERED_COPPER_TRAPDOOR = UNSUPPORTED;
+    //$$ public static Block OXIDIZED_COPPER_TRAPDOOR = UNSUPPORTED;
+    //$$ public static Block WAXED_COPPER_TRAPDOOR = UNSUPPORTED;
+    //$$ public static Block WAXED_EXPOSED_COPPER_TRAPDOOR = UNSUPPORTED;
+    //$$ public static Block WAXED_WEATHERED_COPPER_TRAPDOOR = UNSUPPORTED;
+    //$$ public static Block WAXED_OXIDIZED_COPPER_TRAPDOOR = UNSUPPORTED;
+    //#endif
+
 }

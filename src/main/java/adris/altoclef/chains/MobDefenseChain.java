@@ -35,7 +35,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
+import net.minecraft.registry.Registries;
 import net.minecraft.screen.slot.SlotActionType;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
@@ -549,8 +551,9 @@ public class MobDefenseChain extends SingleTaskChain {
         // Wither skeletons are dangerous because of the wither effect. Oof kinda obvious.
         // If we merely force field them, we will run into them and get the wither effect which will kill us.
 
-        Class<?>[] dangerousMobs = new Class[]{Entities.WARDEN, WitherEntity.class, WitherSkeletonEntity.class,
-                HoglinEntity.class, ZoglinEntity.class, PiglinBruteEntity.class, VindicatorEntity.class};
+        Class<?>[] dangerousMobs = new Class[]{Entities.WARDEN, Entities.BREEZE, Entities.BOGGED,
+                WitherEntity.class, WitherSkeletonEntity.class, HoglinEntity.class, ZoglinEntity.class,
+                PiglinBruteEntity.class, VindicatorEntity.class};
 
         double range = SAFE_KEEP_DISTANCE - 2;
 
@@ -564,6 +567,41 @@ public class MobDefenseChain extends SingleTaskChain {
             }
         }
 
+        Optional<Entity> typeBasedDanger = getDangerousEntityByTypeId(mod, range);
+        if (typeBasedDanger.isPresent()) {
+            return typeBasedDanger;
+        }
+
+        return Optional.empty();
+    }
+
+    private Optional<Entity> getDangerousEntityByTypeId(AltoClef mod, double range) {
+        String[] dangerousIds = new String[]{
+                "minecraft:creaking",
+                "minecraft:nautilus",
+                "minecraft:zombie_nautilus",
+                "minecraft:camel_husk",
+                "minecraft:parched",
+                "minecraft:happy_ghast",
+                "minecraft:ghastling",
+                "minecraft:copper_golem"
+        };
+
+        List<Entity> closeEntities = mod.getEntityTracker().getCloseEntities();
+        for (Entity entity : closeEntities) {
+            if (entity.squaredDistanceTo(mod.getPlayer()) > range * range) {
+                continue;
+            }
+            Identifier entityId = Registries.ENTITY_TYPE.getId(entity.getType());
+            if (entityId == null) {
+                continue;
+            }
+            for (String dangerousId : dangerousIds) {
+                if (entityId.toString().equals(dangerousId) && EntityHelper.isAngryAtPlayer(mod, entity)) {
+                    return Optional.of(entity);
+                }
+            }
+        }
         return Optional.empty();
     }
 
